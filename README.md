@@ -8,13 +8,16 @@ named capture regex for javascript.
 require('nc4js');
 
 var str = '1994-11-29';
-var res = str.match(/(?<year>\d+)(?<month>\d+)(?<day>\d+)/g);
-console.log(res.year);
-// '1994'
-console.log(res.month):
-// '11'
-console.log(res.day);
-// '29'
+var regex = new RegExp('(?<year>\\d+)-(?<month>\\d+)-(?<day>\\d+)');
+var res = regex.exec(str);
+
+console.log(res);
+//[ '1994-11-29',
+  index: 0,
+  input: '1994-11-29',
+  year: '1994',
+  month: '11',
+  day: '29' ]
 ```
 
 ## why?
